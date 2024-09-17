@@ -1,0 +1,221 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    overflow-y: scroll; 
+}
+
+#PaginaPrincipal {
+    width: 100%;
+    max-width: 600px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+#Navegador {
+    width: 100%;
+    max-width: 1200px;
+    background-color: #fff;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+
+.TextoCabecera {
+    margin: 0;
+    font-size: 24px;
+    color: #000;
+}
+
+#FotosContenedor {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.MarcoImagen {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1px;
+    border-top: 10px solid #ddd; /* Borde del contenedor */
+    background-color: #fff; /* Fondo blanco */
+    border-bottom: 10px solid #ddd; /* Fondo blanco */
+    scroll-margin-top: #fff;
+}
+
+.CabeceraFoto {
+    width: 97%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.NombreFoto {
+    font-size: 14px; /* Tamaño de fuente más pequeño */
+    color: #333;
+}
+
+.Fecha {
+    font-size: 12px; /* Tamaño de fuente más pequeño */
+    color: #666;
+}
+
+.ImagenContenedor {
+    width: 100%;
+    max-width: 600px; /* Ajusta el ancho máximo de las imágenes */
+    height: 400px; /* Ajusta la altura fija de las imágenes */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin: 0; /* Elimina los márgenes */
+}
+
+.ImagenContenedor img {
+    width: 100%;
+    height: 100%; /* Ajusta la altura fija de las imágenes */
+    object-fit: cover; /* Asegura que la imagen cubra el contenedor sin distorsionarse */
+}
+
+.ComentarioContenedor {
+    width: 90%;
+    padding: 10px;
+    border-top: 1px solid #ddd;
+    position: relative;
+}
+
+.ComentarioPlaceholder {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 14px;
+    pointer-events: none;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+input[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 2.5px 5px; /* Tamaño más pequeño */
+    cursor: pointer;
+    border-radius: 10px; /* Bordes redondeados */
+    font-size: 12px; /* Tamaño de fuente más pequeño */
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+.inputURL {
+    margin: 20px;
+    padding: 20px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.inputURL h6 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.inputURL h6 span {
+    display: inline-block;
+    margin-right: 5px;
+}
+
+
+.inputURL input[type="text"] {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.inputURL input[type="submit"] {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4682b4;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.inputURL input[type="submit"]:hover {
+    background-color: #5a9bd4;
+}
+@keyframes parpadeo {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+.inputURL h6 span.word1 { 
+    color: #ff6347; /* Tomate */
+    animation: parpadeo 1s infinite;
+    animation-delay: 0.1s;
+}
+
+.inputURL h6 span.word2 { 
+    color: #4682b4; /* Azul acero */
+    animation: parpadeo 1s infinite;
+    animation-delay: 0.2s;
+}
+
+.inputURL h6 span.word3 { 
+    color: #32cd32; /* Verde lima */
+    animation: parpadeo 1s infinite;
+    animation-delay: 0.3s;
+}
+
+.inputURL h6 span.word4 { 
+    color: #ffa500; /* Naranja */
+    animation: parpadeo 1s infinite;
+    animation-delay: 0.4s;
+}
+
+.inputURL h6 span.word5 { 
+    color: #8a2be2; /* Azul violeta */
+    animation: parpadeo 1s infinite;
+    animation-delay: 0.5s;
+}
+
+.inputURL h6 span.word6 { 
+    color: #ff4500; /* Naranja rojo */
+    animation: parpadeo 1s infinite;
+    animation-delay: 0.6s;
+}
+
+
+
+
+
+
+
+
+
+
+

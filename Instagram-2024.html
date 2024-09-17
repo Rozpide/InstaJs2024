@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Photo Feed</title>
+    <link rel="stylesheet" href="Instagram-2024.css" />
+    <script>
+      function verificarEdad() {
+        // Verificar si la edad ya ha sido aceptada en esta sesión
+        if (sessionStorage.getItem("edadAceptada") === "true") {
+          return; // Si ya ha sido aceptada, no hacer nada
+        }
+
+        const edad = prompt("Por favor, ingresa tu edad:");
+        if (edad >= 18) {
+          const nombre = prompt("Por favor, ingresa tu nombre:");
+          const apellidos = prompt("Por favor, ingresa tus apellidos:");
+
+          // Guardar en sessionStorage que la edad ha sido aceptada
+          sessionStorage.setItem("edadAceptada", "true");
+          sessionStorage.setItem("nombre", nombre);
+          sessionStorage.setItem("apellidos", apellidos);
+
+          alert(
+            "Bienvenido, " +
+              nombre +
+              " " +
+              apellidos +
+              ". Al final de la página puedes insertar la URL de otras imágenes para sustituir estas!!"
+          );
+          // Recargar la página actual para mostrar el contenido
+          window.location.reload();
+        } else {
+          alert(
+            "Lo siento, debes tener al menos 18 años para acceder a este sitio. Te voy a redirigir a Google, allí empezarás a probar otras aplicaciones"
+          );
+          // Redirigir a google o cerrar la ventana
+          window.location.href = "https://www.google.com";
+        }
+      }
+      window.onload = verificarEdad;
+    </script>
+
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+      (function () {
+        emailjs.init("TU_USER_ID");
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="PaginaPrincipal">
+      <div id="Navegador">
+        <h1 class="TextoCabecera">Breathe Code Photo Feed</h1>
+      </div>
+      <div id="FotosContenedor">
+        <div class="MarcoImagen">
+          <div class="CabeceraFoto">
+            <p class="NombreFoto">Mi primera foto</p>
+            <p class="Fecha">12/09/2024</p>
+          </div>
+          <div class="ImagenContenedor">
+            <img
+              src="https://www.okchicas.com/wp-content/uploads/2015/11/Adorables-cachorros-que-no-parecen-reales-121.jpg"
+              alt="Foto del usuario"
+            />
+          </div>
+          <div class="ComentarioContenedor">
+            <p class="ComentarioPlaceholder"></p>
+            <input
+              type="text"
+              name="comentario1"
+              placeholder="Añadir un comentario..."
+            />
+          </div>
+        </div>
+        <div class="MarcoImagen">
+          <div class="CabeceraFoto">
+            <p class="NombreFoto">Mi segunda foto</p>
+            <p class="Fecha">13/09/2024</p>
+          </div>
+          <div class="ImagenContenedor">
+            <img
+              src="https://soyunperro.com/wp-content/uploads/2021/03/perro-jugando-con-la-manguera-en-el-jardin.jpg"
+              alt="Foto del usuario"
+            />
+          </div>
+          <div class="ComentarioContenedor">
+            <p class="ComentarioPlaceholder"></p>
+            <input
+              type="text"
+              name="comentario1"
+              placeholder="Añadir un comentario..."
+            />
+          </div>
+        </div>
+        <div class="MarcoImagen">
+          <div class="CabeceraFoto">
+            <p class="NombreFoto">Mi tercera foto</p>
+            <p class="Fecha">14/09/2024</p>
+          </div>
+          <div class="ImagenContenedor">
+            <img
+              src="https://wowmascota.com/wp-content/uploads/2020/04/Perro-jugando.jpg"
+              alt="Foto del usuario"
+            />
+          </div>
+          <div class="ComentarioContenedor">
+            <p class="ComentarioPlaceholder"></p>
+            <input
+              type="text"
+              name="comentario1"
+              placeholder="Añadir un comentario..."
+            />
+          </div>
+        </div>
+        <div class="MarcoImagen">
+          <div class="CabeceraFoto">
+            <p class="NombreFoto">Mi cuarta foto</p>
+            <p class="Fecha">15/09/2024</p>
+          </div>
+          <div class="ImagenContenedor">
+            <img
+              src="https://tse1.mm.bing.net/th/id/OIP.4WPoRRBFEXm4tibtvcJg8AHaFj?rs=1&pid=ImgDetMain"
+              alt="Foto del usuario"
+            />
+          </div>
+          <div class="ComentarioContenedor">
+            <p class="ComentarioPlaceholder"></p>
+            <input
+              type="text"
+              name="comentario1"
+              placeholder="Añadir un comentario..."
+            />
+          </div>
+        </div>
+        <div class="MarcoImagen">
+          <div class="CabeceraFoto">
+            <p class="NombreFoto">Mi quinta foto</p>
+            <p class="Fecha">16/09/2024</p>
+          </div>
+          <div class="ImagenContenedor">
+            <img
+              src="https://cdn.petpress.net/wp-content/uploads/2019/12/12070141/Golden-Mountain-Dog.jpg"
+              alt="Foto del usuario"
+            />
+          </div>
+          <div class="ComentarioContenedor">
+            <p class="ComentarioPlaceholder"></p>
+            <input
+              type="text"
+              name="comentario1"
+              placeholder="Añadir un comentario..."
+            />
+          </div>
+        </div>
+      </div>
+      <div class="inputURL">
+        <form id="formURL">
+          <label for="imageURL"
+            ><h6>
+              <span class="word1">Introduce </span>
+              <span class="word2">la url </span>
+              <span class="word3">de la imagen </span>
+              <span class="word4">que quieras </span>
+              <span class="word5">añadir a tu </span>
+              <span class="word6">carpeta de fotos</span>
+            </h6></label
+          >
+          <input type="text" id="imageURL" name="imageURL" />
+          <input type="submit" value="Añadir Foto" />
+        </form>
+      </div>
+    </div>
+    <!--El siguiente script va modificando las fotos segun añade URL el usuario -->
+    <script>
+      document
+        .getElementById("formURL")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+          const imageURL = document.getElementById("imageURL").value;
+          const images = document.querySelectorAll(".ImagenContenedor img");
+          for (let i = 0; i < images.length; i++) {
+            if (
+              images[i].src.includes("okchicas.com") ||
+              images[i].src.includes("soyunperro.com") ||
+              images[i].src.includes("wowmascota.com") ||
+              images[i].src.includes("bing.net") ||
+              images[i].src.includes("petpress.net")
+            ) {
+              images[i].src = imageURL;
+              break;
+            }
+          }
+          document.getElementById("imageURL").value = "";
+        });
+    </script>
+    <script>
+      document
+        .querySelector(".inputURL form")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+          const comentario = document.querySelector(
+            '.inputURL input[type="text"]'
+          ).value;
+          const templateParams = {
+            to_email: "joserozpide@yahoo.es",
+            message: comentario,
+          };
+
+          emailjs
+            .send("4D4YcjTbgfwXS_Sti", "TU_TEMPLATE_ID", templateParams)
+            .then(
+              function (response) {
+                alert("Comentario enviado con éxito!");
+              },
+              function (error) {
+                alert(
+                  "Error al enviar el comentario: " + JSON.stringify(error)
+                );
+              }
+            );
+
+          document.querySelector('.inputURL input[type="text"]').value = "";
+        });
+    </script>
+  </body>
+</html>
